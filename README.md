@@ -64,21 +64,15 @@ O resultado é que a variável herda o que a literatura técnica define como **L
 
 ### A Prova Pericial em Código:
 
-O código forense abaixo ([`src/01_lixo_memoria.c`](src/01_lixo_memoria.c)) demonstra a leitura crua da Stack:
+O experimento forense completo demonstra tanto a persistência do lixo elétrico na Stack quanto a retenção indevida do `\n` no fluxo do teclado:
 
-```c
-#include <stdio.h>
-
-int main(void) {
-    int contador; // Alocado sem inicialização
-    int total;    // Alocado sem inicialização
-
-    printf("Valor cru de contador: %d\n", contador);
-    printf("Valor cru de total:    %d\n", total);
-
-    return 0;
-}
-```
+<div align="center">
+  <br/>
+  <img src="carbon_shots/autopsia_completa_c_1970.png" width="850" alt="Autópsia Completa no Carbon: Da Memória RAM ao Buffer do Teclado" />
+  <br/>
+  <sub><i>Demonstração pericial no padrão visual Carbon (Tema Blackboard sobre Amarelo Vibrante). Código de referência: <a href="src/01_lixo_memoria.c">src/01_lixo_memoria.c</a></i></sub>
+  <br/><br/>
+</div>
 
 Ao executar este binário, a saída não exibe zeros previsíveis. Ela exibe resíduos imprevisíveis deixados pelo processo de inicialização do executável pelo sistema operacional:
 ```text
@@ -214,11 +208,9 @@ getchar();
 
 Para fins acadêmicos, palestras e inclusão em slides executivos (PowerPoint/Keynote), os códigos periciais deste estudo foram estruturados em cartões de alta resolução no diretório [`carbon_shots/`](carbon_shots/):
 
-| Imagem do Card | Assunto Abordado | Código Fonte |
-| :--- | :--- | :--- |
-| [`card01_autopsia_lixo_stack.png`](carbon_shots/card01_autopsia_lixo_stack.png) | Leitura crua do lixo elétrico na Stack | [`src/01_lixo_memoria.c`](src/01_lixo_memoria.c) |
-| [`card02_crime_do_enter.png`](carbon_shots/card02_crime_do_enter.png) | O salto de linha e o resíduo no `stdin` | [`src/02_crime_do_enter.c`](src/02_crime_do_enter.c) |
-| [`card03_padrao_defesa.png`](carbon_shots/card03_padrao_defesa.png) | O padrão de defesa: inicialização na RAM e drenagem com `getchar()` | [`README.md`](#5-o-padrão-de-engenharia-defensiva) |
+| Imagem do Card | Resolução | Assunto Abordado | Código Fonte |
+| :--- | :---: | :--- | :--- |
+| [**`autopsia_completa_c_1970.png`**](carbon_shots/autopsia_completa_c_1970.png) | 2000 x 1778 | Autópsia Completa: Da Física da RAM ao Buffer `stdin` | [`src/01_lixo_memoria.c`](src/01_lixo_memoria.c) |
 
 ---
 
